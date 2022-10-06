@@ -1,3 +1,4 @@
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox
 from random_recipe import Ui_MainWindow
 import sys
@@ -11,6 +12,8 @@ class MyGui(QMainWindow, Ui_MainWindow):
     def __init__(self) -> None:
         super().__init__()
         self.setupUi(self)
+        self.setWindowFlags(Qt.WindowMinMaxButtonsHint | Qt.WindowCloseButtonHint)
+
         self.pushButton_run.clicked.connect(self.run)
         self.pushButton_all_select.clicked.connect(self.check_all)
         self.pushButton_add.clicked.connect(self.add_recipe)
@@ -41,6 +44,7 @@ class MyGui(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+
     mygui = MyGui()
     # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     # qdarkstyle.load_stylesheet_pyqt5()
