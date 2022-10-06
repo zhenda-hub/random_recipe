@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>356</width>
-    <height>447</height>
+    <height>446</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -604,7 +604,7 @@ QTimeEdit, QToolBox, QToolBox::tab, QToolBox::tab:selected {
            </sizepolicy>
           </property>
           <property name="text">
-           <string>+</string>
+           <string>添加食谱</string>
           </property>
          </widget>
         </item>

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(356, 447)
+        MainWindow.resize(356, 446)
         MainWindow.setStyleSheet("QMainWindow {\n"
 "    background-color:#f0f0f0;\n"
 "}\n"
@@ -612,6 +612,6 @@ class Ui_MainWindow(object):
         self.checkBox.setText(_translate("MainWindow", "火锅"))
         self.checkBox_6.setText(_translate("MainWindow", "炒面"))
         self.pushButton_all_select.setText(_translate("MainWindow", "全选按钮"))
-        self.pushButton_add.setText(_translate("MainWindow", "+"))
+        self.pushButton_add.setText(_translate("MainWindow", "添加食谱"))
         self.label_2.setText(_translate("MainWindow", "随机结果："))
         self.pushButton_run.setText(_translate("MainWindow", "开始随机选择"))
