@@ -1,5 +1,5 @@
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox
+from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox, QInputDialog, QLineEdit
 from random_recipe import Ui_MainWindow
 import sys
 import random
@@ -39,7 +39,10 @@ class MyGui(QMainWindow, Ui_MainWindow):
                 item.setChecked(True)
 
     def add_recipe(self):
-        pass
+        value, flag = QInputDialog.getText(self, "添加食谱", "请输入希望添加的食谱:", QLineEdit.Normal, "焖面")
+        if flag:
+            checkbox = QCheckBox(value)
+            self.verticalLayout_3.addWidget(checkbox)
 
 
 if __name__ == '__main__':

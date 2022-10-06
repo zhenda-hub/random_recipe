@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
-    <height>385</height>
+    <width>356</width>
+    <height>447</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -507,73 +507,73 @@ QTimeEdit, QToolBox, QToolBox::tab, QToolBox::tab:selected {
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2" stretch="6,1">
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="7,1">
+     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="3,1">
       <item>
        <widget class="QGroupBox" name="groupBox">
         <property name="title">
          <string>食谱选项池</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="checkBox">
-           <property name="text">
-            <string>火锅</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="checkBox_2">
-           <property name="text">
-            <string>饺子</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2">
-          <widget class="QCheckBox" name="checkBox_3">
-           <property name="text">
-            <string>包子</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QCheckBox" name="checkBox_4">
-           <property name="text">
-            <string>米线</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="4">
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
           <widget class="QCheckBox" name="checkBox_5">
            <property name="text">
             <string>大米</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QCheckBox" name="checkBox_6">
+         <item>
+          <widget class="QCheckBox" name="checkBox_4">
            <property name="text">
-            <string>炒面</string>
+            <string>米线</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="1">
-          <widget class="QCheckBox" name="checkBox_7">
+         <item>
+          <widget class="QCheckBox" name="checkBox_9">
            <property name="text">
-            <string>泡面</string>
+            <string>汉堡</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="2">
+         <item>
+          <widget class="QCheckBox" name="checkBox_3">
+           <property name="text">
+            <string>包子</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QCheckBox" name="checkBox_8">
            <property name="text">
             <string>烧烤</string>
            </property>
           </widget>
          </item>
-         <item row="1" column="3">
-          <widget class="QCheckBox" name="checkBox_9">
+         <item>
+          <widget class="QCheckBox" name="checkBox_2">
            <property name="text">
-            <string>汉堡</string>
+            <string>饺子</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_7">
+           <property name="text">
+            <string>泡面</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox">
+           <property name="text">
+            <string>火锅</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="checkBox_6">
+           <property name="text">
+            <string>炒面</string>
            </property>
           </widget>
          </item>
@@ -605,19 +605,6 @@ QTimeEdit, QToolBox, QToolBox::tab, QToolBox::tab:selected {
           </property>
           <property name="text">
            <string>+</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="pushButton_save">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>保存</string>
           </property>
          </widget>
         </item>
