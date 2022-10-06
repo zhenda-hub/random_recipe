@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox
 from random_recipe import Ui_MainWindow
 import sys
 import random
+# import qdarkstyle
 import pprint
 
 
@@ -41,5 +42,7 @@ class MyGui(QMainWindow, Ui_MainWindow):
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     mygui = MyGui()
+    # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
+    # qdarkstyle.load_stylesheet_pyqt5()
     mygui.show()
     sys.exit(app.exec_())
