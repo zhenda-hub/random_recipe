@@ -1,5 +1,6 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox, QInputDialog, QLineEdit
+from PyQt5.QtGui import QIcon
 from random_recipe import Ui_MainWindow
 import sys
 from random import randrange
@@ -15,6 +16,7 @@ class MyGui(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setWindowFlags(Qt.WindowMinMaxButtonsHint | Qt.WindowCloseButtonHint)
+        self.setWindowIcon(QIcon('food.ico'))
         self.result = []
 
         self.pushButton_run.clicked.connect(self.run)
