@@ -3,6 +3,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox, Q
 from random_recipe import Ui_MainWindow
 import sys
 from random import randrange
+from collections import Counter
+from json import dumps
 # import qdarkstyle
 # import pprint
 
@@ -13,14 +15,14 @@ class MyGui(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setWindowFlags(Qt.WindowMinMaxButtonsHint | Qt.WindowCloseButtonHint)
-        self.run_count = 0
+        self.result = []
 
         self.pushButton_run.clicked.connect(self.run)
         self.pushButton_all_select.clicked.connect(self.check_all)
         self.pushButton_add.clicked.connect(self.add_recipe)
+        self.pushButton_reset.clicked.connect(self.reset)
 
     def run(self):
-        self.run_count += 1
         recipe_list = []
         for item in self.groupBox.findChildren(QCheckBox):
             if item.isChecked():
@@ -29,7 +31,10 @@ class MyGui(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, '错误', '需要选择食谱')
             return
         index = randrange(0, len(recipe_list))
-        self.textBrowser.append(f'随即结果{self.run_count}: {recipe_list[index]}')
+        # self.textBrowser.append(f'随即结果{self.run_count}: {recipe_list[index]}')
+        self.result.append(recipe_list[index])
+        output_str = dumps(Counter(self.result), ensure_ascii=False, indent=2)
+        self.textBrowser.setText(f'{output_str}')
 
     def check_all(self):
         all_check_list = self.groupBox.findChildren(QCheckBox)
@@ -43,8 +48,12 @@ class MyGui(QMainWindow, Ui_MainWindow):
     def add_recipe(self):
         value, flag = QInputDialog.getText(self, "添加食谱", "请输入希望添加的食谱:", QLineEdit.Normal, "焖面")
         if flag:
-            checkbox = QCheckBox(value)
-            self.verticalLayout_3.addWidget(checkbox)
+            check_box = QCheckBox(value)
+            self.verticalLayout_3.addWidget(check_box)
+
+    def reset(self):
+        self.result = []
+        self.textBrowser.setText('')
 
 
 if __name__ == '__main__':
