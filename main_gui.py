@@ -2,9 +2,9 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCheckBox, QMessageBox, QInputDialog, QLineEdit
 from random_recipe import Ui_MainWindow
 import sys
-import random
+from random import randrange
 # import qdarkstyle
-import pprint
+# import pprint
 
 
 class MyGui(QMainWindow, Ui_MainWindow):
@@ -13,12 +13,14 @@ class MyGui(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
         self.setWindowFlags(Qt.WindowMinMaxButtonsHint | Qt.WindowCloseButtonHint)
+        self.run_count = 0
 
         self.pushButton_run.clicked.connect(self.run)
         self.pushButton_all_select.clicked.connect(self.check_all)
         self.pushButton_add.clicked.connect(self.add_recipe)
 
     def run(self):
+        self.run_count += 1
         recipe_list = []
         for item in self.groupBox.findChildren(QCheckBox):
             if item.isChecked():
@@ -26,8 +28,8 @@ class MyGui(QMainWindow, Ui_MainWindow):
         if not recipe_list:
             QMessageBox.warning(self, '错误', '需要选择食谱')
             return
-        index = random.randrange(0, len(recipe_list))
-        self.label_result.setText(recipe_list[index])
+        index = randrange(0, len(recipe_list))
+        self.textBrowser.append(f'随即结果{self.run_count}: {recipe_list[index]}')
 
     def check_all(self):
         all_check_list = self.groupBox.findChildren(QCheckBox)
