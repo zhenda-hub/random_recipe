@@ -19,3 +19,6 @@ bin-release/
 __pycache__/
 .idea/
 
+build/
+dist/
+
