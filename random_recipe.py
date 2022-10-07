@@ -603,7 +603,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "三餐随机小工具"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "吃什么"))
         self.groupBox.setTitle(_translate("MainWindow", "食谱选项池"))
         self.checkBox_5.setText(_translate("MainWindow", "大米"))
         self.checkBox_4.setText(_translate("MainWindow", "米线"))

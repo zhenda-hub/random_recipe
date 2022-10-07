@@ -6,5 +6,6 @@
 #### 软件架构
 软件架构说明
 
-
+#### 环境搭建
+conda env create -f freeze.yml
 
