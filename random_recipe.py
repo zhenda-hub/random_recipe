@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(479, 390)
+        MainWindow.resize(415, 442)
         MainWindow.setStyleSheet("QMainWindow {\n"
 "    background-color:#f0f0f0;\n"
 "}\n"
@@ -568,7 +568,9 @@ class Ui_MainWindow(object):
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralwidget)
-        self.textBrowser.setStyleSheet("color:rgb(138, 71, 255)")
+        self.textBrowser.setStyleSheet("color:rgb(138, 71, 255);\n"
+"")
+        self.textBrowser.setPlaceholderText("")
         self.textBrowser.setObjectName("textBrowser")
         self.verticalLayout.addWidget(self.textBrowser)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
@@ -621,6 +623,5 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.textBrowser.setPlaceholderText(_translate("MainWindow", "随机结果："))
         self.pushButton_run.setText(_translate("MainWindow", "启动"))
         self.pushButton_reset.setText(_translate("MainWindow", "清零"))

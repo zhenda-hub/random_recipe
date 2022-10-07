@@ -35,8 +35,13 @@ class MyGui(QMainWindow, Ui_MainWindow):
         index = randrange(0, len(recipe_list))
         # self.textBrowser.append(f'随即结果{self.run_count}: {recipe_list[index]}')
         self.result.append(recipe_list[index])
-        output_str = dumps(Counter(self.result), ensure_ascii=False, indent=2)
-        self.textBrowser.setText(f'{output_str}')
+        counter = Counter(self.result)
+        output_str = dumps(counter, ensure_ascii=False, indent=4)
+
+        self.textBrowser.setText('运行结果：')
+        self.textBrowser.append(f'{output_str}')
+        self.textBrowser.append('前三甲：')
+        self.textBrowser.append(f'{counter.most_common(3)}')
 
     def check_all(self):
         all_check_list = self.groupBox.findChildren(QCheckBox)
