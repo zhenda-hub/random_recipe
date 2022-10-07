@@ -623,5 +623,5 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.pushButton_run.setText(_translate("MainWindow", "启动"))
-        self.pushButton_reset.setText(_translate("MainWindow", "清零"))
+        self.pushButton_run.setText(_translate("MainWindow", "随机一下"))
+        self.pushButton_reset.setText(_translate("MainWindow", "清空"))

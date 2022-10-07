@@ -644,7 +644,7 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="text">
-           <string>启动</string>
+           <string>随机一下</string>
           </property>
          </widget>
         </item>
@@ -657,7 +657,7 @@ p, li { white-space: pre-wrap; }
            </sizepolicy>
           </property>
           <property name="text">
-           <string>清零</string>
+           <string>清空</string>
           </property>
          </widget>
         </item>
