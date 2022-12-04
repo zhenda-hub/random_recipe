@@ -66,7 +66,7 @@ class MyGui(QtWidgets.QMainWindow, Ui_MainWindow):
     def add_options(self):
         option_name = self.lineEdit_input.text()
 
-        if option_name and option_name not in self.options:
+        if option_name:
             self.options.append(option_name)
             self._add_option(option_name)
 
@@ -107,22 +107,22 @@ class MyGui(QtWidgets.QMainWindow, Ui_MainWindow):
         #     'options': []
         # }
         file_abspath, file_type = QtWidgets.QFileDialog.getSaveFileName(self, "文件保存", "./settings",
-                                                                        "Json Files (*.json)")
+                                                                        "txt Files (*.txt)")
 
         out_dict = {'options': self.options}
         if file_abspath:
             json.dump(out_dict, open(file_abspath, 'w', encoding='u8'), ensure_ascii=False, indent=4)
 
     def load(self):
-        file_abspath, file_type = QtWidgets.QFileDialog.getOpenFileName(self, "选取json文件", "./settings",
-                                                                        "Json Files (*.json)")
+        file_abspath, file_type = QtWidgets.QFileDialog.getOpenFileName(self, "选取txt文件", "./settings",
+                                                                        "txt Files (*.txt)")
         try:
             load_dict = json.load(open(file_abspath, 'r', encoding='u8'))
-        except:
+        except:  # 文件load错误
             pass
         else:
             self.clear_all()
-            self.options = load_dict['options']
+            self.options = load_dict.get('options', [])  # 默认为空列表
             for item in self.options:
                 self._add_option(item)
 
@@ -133,11 +133,14 @@ def gene_fold(fold):
 
 
 if __name__ == '__main__':
+    # 创建文件夹
     gene_fold('settings')
+    # 启动应用
     app = QtWidgets.QApplication(sys.argv)
 
     mygui = MyGui()
     # app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     # qdarkstyle.load_stylesheet_pyqt5()
     mygui.show()
+
     sys.exit(app.exec_())
