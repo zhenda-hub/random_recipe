@@ -108,14 +108,27 @@ class MyGui(QtWidgets.QMainWindow, Ui_MainWindow):
         # }
         file_abspath, file_type = QtWidgets.QFileDialog.getSaveFileName(self, "文件保存", "./settings",
                                                                         "txt Files (*.txt)")
+        print('file_abspath', file_abspath)
+        print('file_abspath', type(file_abspath))
+        print('file_type', file_type)
+        print('file_type', type(file_type))
 
         out_dict = {'options': self.options}
-        if file_abspath:
+        try:
             json.dump(out_dict, open(file_abspath, 'w', encoding='u8'), ensure_ascii=False, indent=4)
+        except:
+            pass
+        # if file_abspath:
+        #     json.dump(out_dict, open(file_abspath, 'w', encoding='u8'), ensure_ascii=False, indent=4)
+        #
 
     def load(self):
         file_abspath, file_type = QtWidgets.QFileDialog.getOpenFileName(self, "选取txt文件", "./settings",
                                                                         "txt Files (*.txt)")
+        print('file_abspath', file_abspath)
+        print('file_abspath', type(file_abspath))
+        print('file_type', file_type)
+        print('file_type', type(file_type))
         try:
             load_dict = json.load(open(file_abspath, 'r', encoding='u8'))
         except:  # 文件load错误
