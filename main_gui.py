@@ -59,9 +59,28 @@ class MyGui(QtWidgets.QMainWindow, Ui_MainWindow):
         self.textBrowser.setText('')
 
     def clear_all(self):
-        pushButton_list = self.groupBox_options.findChildren(QtWidgets.QPushButton)
-        for item in pushButton_list:
-            item.click()
+        res_button = QtWidgets.QMessageBox.question(
+            self, '提示', '舍弃当前所有选项吗？')
+
+        # res_button = QtWidgets.QMessageBox.warning(
+        #     self, '提示', '舍弃当前所有选项吗？')
+        # res_button = QtWidgets.QMessageBox.information(
+        #     self, '提示', '舍弃当前所有选项吗？')
+        # res_button = QtWidgets.QMessageBox.critical(
+        #     self, '提示', '舍弃当前所有选项吗？')
+        # res_button = QtWidgets.QMessageBox.about(
+        #     self, '提示', '舍弃当前所有选项吗？')
+
+        print(res_button)
+        print(type(res_button))
+
+        if res_button == QtWidgets.QMessageBox.Yes:
+            pushButton_list = self.groupBox_options.findChildren(QtWidgets.QPushButton)
+            for item in pushButton_list:
+                item.click()
+            return True
+        else:
+            return False
 
     def add_options(self):
         option_name = self.lineEdit_input.text()
@@ -134,10 +153,10 @@ class MyGui(QtWidgets.QMainWindow, Ui_MainWindow):
         except:  # 文件load错误
             pass
         else:
-            self.clear_all()
-            self.options = load_dict.get('options', [])  # 默认为空列表
-            for item in self.options:
-                self._add_option(item)
+            if self.clear_all():
+                self.options = load_dict.get('options', [])  # 默认为空列表
+                for item in self.options:
+                    self._add_option(item)
 
 
 def gene_fold(fold):
