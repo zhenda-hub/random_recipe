@@ -554,7 +554,7 @@ QTimeEdit, QToolBox, QToolBox::tab, QToolBox::tab:selected {
              </sizepolicy>
             </property>
             <property name="text">
-             <string>保存设置</string>
+             <string>导出设置</string>
             </property>
            </widget>
           </item>
@@ -567,7 +567,7 @@ QTimeEdit, QToolBox, QToolBox::tab, QToolBox::tab:selected {
              </sizepolicy>
             </property>
             <property name="text">
-             <string>加载设置</string>
+             <string>导入设置</string>
             </property>
            </widget>
           </item>

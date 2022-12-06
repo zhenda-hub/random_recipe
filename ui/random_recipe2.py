@@ -603,8 +603,8 @@ class Ui_MainWindow(object):
         self.groupBox_options.setTitle(_translate("MainWindow", "选项池"))
         self.lineEdit_input.setPlaceholderText(_translate("MainWindow", "回车键添加"))
         self.pushButton_clear_options.setText(_translate("MainWindow", "清空选项"))
-        self.pushButton_save.setText(_translate("MainWindow", "保存设置"))
-        self.pushButton_load.setText(_translate("MainWindow", "加载设置"))
+        self.pushButton_save.setText(_translate("MainWindow", "导出设置"))
+        self.pushButton_load.setText(_translate("MainWindow", "导入设置"))
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
