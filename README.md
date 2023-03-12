@@ -12,3 +12,6 @@ pyqt5 做的随机工具， 可以自由增删选项池， 自由加载配置。
 #### 环境搭建
 conda env create -f freeze.yml
 
+#### 界面展示
+![应用界面](./statics/select_gui.png)
+
