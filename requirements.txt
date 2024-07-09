@@ -1,0 +1,10 @@
+altgraph==0.17.4
+packaging==24.1
+pyinstaller==6.9.0
+pyinstaller-hooks-contrib==2024.7
+PyQt5==5.15.10
+PyQt5-Qt5==5.15.14
+PyQt5-sip==12.13.0
+QDarkStyle==3.2.3
+QtPy==2.4.1
+setuptools==70.2.0
